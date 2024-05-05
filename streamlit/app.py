@@ -49,9 +49,9 @@ def load_image(image_path):
 
 # Define paths to the images
 image_paths = {
-    'Image 3': '../src/images/boro_potholes.png',
-    'Image 2': '../src/images/monthly_potholes.png',
-    'Image 1': '../src/images/zipcode_choropleth.png'
+    'Image 3': 'src/images/boro_potholes.png',
+    'Image 2': 'src/images/monthly_potholes.png',
+    'Image 1': 'src/images/zipcode_choropleth.png'
 }
 
 # Preload the images
@@ -99,7 +99,7 @@ def load_first_row(dataset_path):
 def predict(model, features):
     # Preprocess the features if needed (e.g., encoding, scaling)
     # Combine default features with user-input features
-    default_features = load_first_row('../Data/num_df.csv')
+    default_features = load_first_row('Data/num_df.csv')
     combined_features = {**default_features, **features}
     # Make predictions using the model
     prediction = model.predict(pd.DataFrame([combined_features]))
@@ -108,7 +108,7 @@ def predict(model, features):
     return prediction, feature_importances
 
 # Load the model
-model = load_model('../models/random_forest_model.joblib')
+model = load_model('models/random_forest_model.joblib')
 
 # Define user-input features
 zip_code = st.number_input('Zip Code', value=10001, step=1)
@@ -136,7 +136,7 @@ st.write('##### Following are the 10 most Important Predictors for your Input')
 # Function to plot feature importances
 def plot_feature_importances(feature_importances):
     # Get the names of the features
-    feature_names = load_first_row('../Data/num_df.csv').index.values
+    feature_names = load_first_row('Data/num_df.csv').index.values
     
     # Select the top 10 most important features
     top_indices = feature_importances.argsort()[-10:][::-1]
