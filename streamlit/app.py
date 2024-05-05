@@ -54,9 +54,9 @@ image_paths = {
     'Image 1': 'src/images/zipcode_choropleth.png'
 }
 image_desc = {
-    'Image 3': 'This map is highlighting the occurrence of potholes by Zip Codes of NYC. Zip Code 10314 in Staten Island has the most number of potholes and we can see that it is the biggest zip code in terms of area in NYC.',
-    'Image 2': 'The trend to note here is that the pothole numbers are maximum in the spring season which helped me to unveil an interesting fact that If the water freezes and thaws over and over, the pavement will weaken and continue cracking.',
-    'Image 1': 'We can see that the most number of potholes occurrences are in Queens and then Brooklyn. We can assume that number of potholes are dependent on the Area of BOROUGHS, POPULATION, and TRAFFIC'
+    'text3': 'This map is highlighting the occurrence of potholes by Zip Codes of NYC. Zip Code 10314 in Staten Island has the most number of potholes and we can see that it is the biggest zip code in terms of area in NYC.',
+    'text2': 'The trend to note here is that the pothole numbers are maximum in the spring season which helped me to unveil an interesting fact that If the water freezes and thaws over and over, the pavement will weaken and continue cracking.',
+    'text1': 'We can see that the most number of potholes occurrences are in Queens and then Brooklyn. We can assume that number of potholes are dependent on the Area of BOROUGHS, POPULATION, and TRAFFIC'
 }
 
 # Preload the images
@@ -67,11 +67,11 @@ st.sidebar.title("Select a Visual for more Insights")
 # Add checkboxes to select images on the sidebar
 selected_images = []
 if st.sidebar.checkbox("Choropleth Map of Zipcodes"):
-    selected_images.append(('Image 1', 'text1'))
+    selected_images.append(('Image 1', 'text3'))
 if st.sidebar.checkbox("Monthly Number of Potholes"):
     selected_images.append(('Image 2', 'text2'))
 if st.sidebar.checkbox("Distribution of Potholes"):
-    selected_images.append(('Image 3', 'text3'))
+    selected_images.append(('Image 3', 'text1'))
 
 # Display the selected images and their descriptions on the main page
 if selected_images:
