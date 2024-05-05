@@ -63,11 +63,13 @@ st.sidebar.title("Select a Visual for more Insights")
 selected_images = []
 if st.sidebar.checkbox("Choropleth Map of Zipcodes"):
     selected_images.append('Image 1')
-    st.write("asdasdasdadadadada")
+    st.write("This map is highlighting the occurrence of potholes by Zip Codes of NYC. Zip Code 10314 in Staten Island has the most number of potholes and we can see that it is the biggest zip code in terms of area in NYC.")
 if st.sidebar.checkbox("Monthly Number of Potholes"):
     selected_images.append('Image 2')
+    st.write("The trend to note here is that the pothole numbers are maximum in the spring season which helped me to unveil an interesting fact that If the water freezes and thaws over and over, the pavement will weaken and continue cracking.")
 if st.sidebar.checkbox("Distribution of Potholes"):
     selected_images.append('Image 3')
+    st.write("We can see that the most number of potholes occurrences are in Queens and then Brooklyn. We can assume that number of potholes are dependent on the Area of BOROUGHS, POPULATION, and TRAFFIC")
 
 # Display the selected images on the main page
 if selected_images:
