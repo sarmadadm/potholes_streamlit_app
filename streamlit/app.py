@@ -43,15 +43,20 @@ if selected_column:
 # -------------------------------------------------------------------------------
 # load visuals
 # Function to load and display image
-def load_image(image_path):
+def load_image(image_path, description):
     image = Image.open(image_path)
-    st.image(image, caption='Selected Image', use_column_width=True)
+    st.image(image, caption=description, use_column_width=True)
 
 # Define paths to the images
 image_paths = {
     'Image 3': 'src/images/boro_potholes.png',
     'Image 2': 'src/images/monthly_potholes.png',
     'Image 1': 'src/images/zipcode_choropleth.png'
+}
+image_desc = {
+    'text1' : 'This map is highlighting the occurrence of potholes by Zip Codes of NYC. Zip Code 10314 in Staten Island has the most number of potholes and we can see that it is the biggest zip code in terms of area in NYC.',
+    'text2' : 'The trend to note here is that the pothole numbers are maximum in the spring season which helped me to unveil an interesting fact that If the water freezes and thaws over and over, the pavement will weaken and continue cracking.',
+    'text3' : 'We can see that the most number of potholes occurrences are in Queens and then Brooklyn. We can assume that number of potholes are dependent on the Area of BOROUGHS, POPULATION, and TRAFFIC'
 }
 
 # Preload the images
@@ -61,20 +66,18 @@ st.sidebar.title("Select a Visual for more Insights")
 
 # Add checkboxes to select images on the sidebar
 selected_images = []
+selected_image_desc = []
 if st.sidebar.checkbox("Choropleth Map of Zipcodes"):
-    selected_images.append('Image 1')
-    st.write("This map is highlighting the occurrence of potholes by Zip Codes of NYC. Zip Code 10314 in Staten Island has the most number of potholes and we can see that it is the biggest zip code in terms of area in NYC.")
+    selected_images.append('Image 1', 'text1')
 if st.sidebar.checkbox("Monthly Number of Potholes"):
-    selected_images.append('Image 2')
-    st.write("The trend to note here is that the pothole numbers are maximum in the spring season which helped me to unveil an interesting fact that If the water freezes and thaws over and over, the pavement will weaken and continue cracking.")
+    selected_images.append('Image 2', 'text2')
 if st.sidebar.checkbox("Distribution of Potholes"):
-    selected_images.append('Image 3')
-    st.write("We can see that the most number of potholes occurrences are in Queens and then Brooklyn. We can assume that number of potholes are dependent on the Area of BOROUGHS, POPULATION, and TRAFFIC")
+    selected_images.append('Image 3', 'text3')
 
 # Display the selected images on the main page
 if selected_images:
-    for image_key in selected_images:
-        load_image(image_paths[image_key])
+    for image_key, desc_key in selected_images:
+        load_image(image_paths[image_key], image_desc[desc_key])
 
 # ----------------------------------------------------------------------------------
 # predictions
