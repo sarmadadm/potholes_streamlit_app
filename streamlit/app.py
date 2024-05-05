@@ -19,7 +19,7 @@ st.write("""
     """)
 
 
-df = pd.read_csv('../Data/numeric_df.csv')
+df = pd.read_csv('Data/numeric_df.csv')
 
 
 
