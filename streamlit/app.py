@@ -59,12 +59,11 @@ preloaded_images = {key: Image.open(image_path) for key, image_path in image_pat
 
 st.sidebar.title("Select a Visual for more Insights")
 
-# Add buttons to select an image on the sidebar
-
 # Add checkboxes to select images on the sidebar
 selected_images = []
 if st.sidebar.checkbox("Choropleth Map of Zipcodes"):
     selected_images.append('Image 1')
+    st.write("asdasdasdadadadada")
 if st.sidebar.checkbox("Monthly Number of Potholes"):
     selected_images.append('Image 2')
 if st.sidebar.checkbox("Distribution of Potholes"):
@@ -74,17 +73,6 @@ if st.sidebar.checkbox("Distribution of Potholes"):
 if selected_images:
     for image_key in selected_images:
         load_image(image_paths[image_key])
-# selected_image = None
-# if st.sidebar.button("Choropleth Map of Zipcodes"):
-#     selected_image = 'Image 1'
-# elif st.sidebar.button("Monthly Number of Potholes"):
-#     selected_image = 'Image 2'
-# elif st.sidebar.button("Distribution of Potholes"):
-#     selected_image = 'Image 3'
-
-# # Display the selected image on the main page
-# if selected_image:
-#     load_image(image_paths[selected_image])
 
 # ----------------------------------------------------------------------------------
 # predictions
