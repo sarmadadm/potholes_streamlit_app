@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
-from joblib import load
 import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
 
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.write("""
     # Welcome to NYC Pothole Prediction App!
@@ -76,7 +76,6 @@ if selected_image:
 # predictions
 
 import joblib
-import matplotlib.pyplot as plt
 
 st.write("""
     ##### Please Enter the Following Inputs for the model to predict the Number of Days to Fix a Pothole
@@ -142,7 +141,7 @@ def plot_feature_importances(feature_importances):
     top_indices = feature_importances.argsort()[-10:][::-1]
     top_features = feature_names[top_indices]
     top_importances = feature_importances[top_indices]
-    
+    st.set_option('deprecation.showPyplotGlobalUse', False)
     # Plot the top 10 most important features
     plt.figure(figsize=(10, 6))
     plt.barh(top_features, top_importances)
