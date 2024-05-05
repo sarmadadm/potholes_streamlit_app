@@ -108,7 +108,7 @@ def predict(model, features):
     return prediction, feature_importances
 
 # Load the model
-model = load_model('models/random_forest_model.joblib')
+model = load_model('Models/random_forest_model.joblib')
 
 # Define user-input features
 zip_code = st.number_input('Zip Code', value=10001, step=1)
