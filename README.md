@@ -1,4 +1,4 @@
-# NYC Pothole Repair Prediction App
+# NYC Pothole Repair Prediction Streamlit App
 
 This Streamlit app predicts the number of days required to fix a pothole in NYC. The prediction model was trained in a different project and has been pickled for use in this application. The app leverages the model, dataset, and visualizations to provide insights and predictions.
 
