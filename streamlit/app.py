@@ -147,7 +147,7 @@ def plot_feature_importances(feature_importances):
     top_indices = feature_importances.argsort()[-10:][::-1]
     top_features = feature_names[top_indices]
     top_importances = feature_importances[top_indices]
-    st.set_option('deprecation.showPyplotGlobalUse', False)
+    #st.set_option('deprecation.showPyplotGlobalUse', False)
     # Plot the top 10 most important features
     plt.figure(figsize=(10, 6))
     plt.barh(top_features, top_importances)
