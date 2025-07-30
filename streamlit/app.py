@@ -30,7 +30,7 @@ default_column = df.columns[4]  # Select the first column as default
 selected_column = st.sidebar.selectbox('Select Feature', options=[''] + list(df.columns), index=0)
     
 if selected_column:
-    st.set_option('deprecation.showPyplotGlobalUse', False)
+    #st.set_option('deprecation.showPyplotGlobalUse', False)
     # Plot histogram
     plt.figure(figsize=(10, 6))
     plt.hist(df[selected_column], bins=100, color='skyblue', edgecolor='black')
