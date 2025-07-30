@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
 
-st.set_option('deprecation.showPyplotGlobalUse', False)
+#st.set_option('deprecation.showPyplotGlobalUse', False)
 
 st.write("""
     # Welcome to NYC Pothole Prediction App!
